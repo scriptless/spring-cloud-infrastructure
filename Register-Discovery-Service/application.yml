@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+spring.application.name: register-discovery-service
+
+eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 2
+    leaseExpirationDurationInSeconds: 2
+  server:
+    evictionIntervalTimerInMs: 1000
+    responseCacheUpdateIntervalMs: 1000
+    waitTimeInMsWhenSyncEmpty: 0
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:8081/eureka
