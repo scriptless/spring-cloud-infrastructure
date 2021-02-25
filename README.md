@@ -7,11 +7,11 @@
 * Client (Postman Kollektion mit allen Routes)
 
 ### 1. Gateway Service
-Features:
+#### Features:
 * Routet alle Anfragen zu den jeweiligen Services
 * Bei mehreren dynamischen Services wird bei Anfrage ein Service ausgewählt und der Nutzer wird zu diesem Service geroutet (Loadbalancing -> Lastverteilung auf die verschiedenen dynamischen Services)
 * Zwei verschiedene Darstellungen von einer Liste von den verfügbaren Instanzen
-Routes:
+#### Routes:
 * IP-Adresse: localhost:8080
 * /service/** -> Anfrage zu einem dynamischen Service
 * /factory/** -> Anfrage zur Service-Factory
@@ -19,11 +19,11 @@ Routes:
 * /instancesFull -> Darstellung von verfügbaren Instanzen (detailliert)
 
 ### 2. Registry & Discovery Service
-Features:
+#### Features:
 * Verzeichnis von allen Services
 * Services können sich mit diesem Service registrieren/deregistrieren
 * Services können bei dem Registry-Discovery Service einen bestimmten Service und deren URL nachfragen
-Routes:
+#### Routes:
 * IP-Adresse: localhost:8081
 * http://localhost:8081 -> Eureka Userinterface (Überblick Services)
 * /eureka -> Service URL (Eureka HTTP Endpoints, Services machen Anfragen zu dieser URL)
@@ -34,25 +34,25 @@ Features:
 * Spawnt einen dynamischen Service mithilfe des ProcessBuilders ("java -jar dynamicservice.jar")
 * Ausführbare JAR des dynamischen Services befindet sich unter /resources/services/dynamicservice.jar
 * Konfiguration des dynamischen Services befindet sich unter /resources/services/dynamicservice.properties
-Routes:
+#### #### Routes:
 * IP-Adresse: localhost:8010
 * /factory/create -> Erstellt einen dynamischen Service mit zufälligem Port
 
 ### 4. Dynamic Service
-Features:
+#### Features:
 * Ein dynamisch erstellter Service von der Service-Factory
 * Port 0 bzw. ein zufälliger Port wird zugewiesen
 * Service hat eine einmalige zufällige Instance-ID zur Unterscheidung
 * Service kann sich durch Anfrage an /service/stop selber beenden
-Routes:
+#### Routes:
 * IP-Adresse: localhost:ZUFÄLLIGER_PORT
 * /service -> Zeigt Instance-ID des dyn. Services an
 * /service/stop -> Stoppt den Service und deregistriert sich vom Registry-Discovery Service
 
 ### 5. Client
-Features:
+#### Features:
 * Beinhaltet eine Postman-Kollektion von Routes zum Testen der Infrastruktur
-Routes:
+#### Routes:
 * /instances
 * /instancesFull
 * /factory/create
