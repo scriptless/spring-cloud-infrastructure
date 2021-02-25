@@ -21,7 +21,7 @@
 
 ## 2. Registry & Discovery Service
 #### Features:
-* Verzeichnis von allen Services
+* Verzeichnis für alle Services
 * Services können sich mit diesem Service registrieren/deregistrieren
 * Services können bei dem Registry-Discovery Service einen bestimmten Service und deren URL nachfragen
 #### Routes:
